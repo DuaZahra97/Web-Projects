@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillRoute - Discover Your Learning Path</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app"></div>
+    <!-- Hero Section Template -->
+    <template id="hero-template">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">SkillRoute</h1>
+                <p class="hero-subtitle">
+                    Discover your next superpower.<br>
+                    Tailored roadmaps for lifelong learners.
+                </p>
+                <div class="search-container">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        class="search-input" 
+                        placeholder="What do you want to learn?"
+                    >
+                    <span class="search-icon">🔍</span>
+                </div>
+            </div>
+        </section>
+    </template>
+    <!-- Home Page Template -->
+    <template id="home-template">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="Technology">Technology</button>
+            <button class="filter-btn" data-category="Creative">Creative</button>
+            <button class="filter-btn" data-category="Business">Business</button>
+        </div>
+        <div id="skillsGrid" class="skills-grid">
+            <!-- Skills will be inserted here -->
+        </div>
+        <div id="emptyState" class="empty-state" style="display: none;">
+            <p>No skills found matching your criteria.</p>
+            <button class="clear-filters-btn">Clear filters</button>
+        </div>
+        <footer class="footer">
+            <p>&copy; 2025 SkillRoute. Built with HTML, CSS & JavaScript.</p>
+        </footer>
+    </template>
+    <!-- Skill Card Template -->
+    <template id="skill-card-template">
+        <div class="skill-card">
+            <div class="card-header">
+                <div class="skill-icon"></div>
+                <span class="category-badge"></span>
+            </div>
+            <div class="card-body">
+                <h3 class="skill-title"></h3>
+                <p class="skill-description"></p>
+            </div>
+            <div class="card-footer">
+                <div class="skill-meta">
+                    <span class="time">⏱ <span></span></span>
+                    <span class="difficulty">📊 <span></span></span>
+                </div>
+                <span class="arrow">→</span>
+            </div>
+        </div>
+    </template>
+    <!-- Detail Page Template -->
+    <template id="detail-template">
+        <div class="detail-container">
+            <button class="back-btn">← Back to Skills</button>
+            
+            <div class="detail-header">
+                <div class="detail-icon"></div>
+                <div class="detail-info">
+                    <h1 class="detail-title"></h1>
+                    <p class="detail-description"></p>
+                    <div class="detail-meta">
+                        <div class="meta-item">
+                            <span class="meta-icon">⏱</span>
+                            <span class="meta-value"></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">📊</span>
+                            <span class="meta-value"></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">📚</span>
+                            <span class="meta-value"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="roadmap-section">
+                <h2>Learning Roadmap</h2>
+                <p class="roadmap-subtitle"></p>
+                <div id="roadmap" class="roadmap"></div>
+            </div>
+            <div class="cta-section">
+                <button class="cta-btn">Start Learning Now</button>
+            </div>
+        </div>
+    </template>
+    <script src="script.js"></script>
+</body>
+</html>
